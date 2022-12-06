@@ -16,3 +16,14 @@ class PostSerializer(serializers.ModelSerializer):
         return Post.objects.create(validated_data)
 
 
+class PostTitleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = (
+            'title',
+        )
+
+    def create(self, validated_data):
+        return Post.objects.create(validated_data)
+
+
